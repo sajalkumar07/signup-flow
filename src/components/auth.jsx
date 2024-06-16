@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../App.css';
 
 const Auth = ({ onLogin }) => {
   const [username, setUsername] = useState('');
@@ -33,22 +34,22 @@ const Auth = ({ onLogin }) => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <label>
-          Username:
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        </label>
-        <br />
-        <button type="submit">Login</button>
-      </form>
-      <p>{message}</p>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h2>Login</h2>
+        <form onSubmit={handleLogin} className="auth-form">
+          <label>
+            Username:
+            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
+          </label>
+          <label>
+            Password:
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          </label>
+          <button type="submit" className='btn'>Login</button>
+        </form>
+        <p className="auth-message">{message}</p>
+      </div>
     </div>
   );
 };

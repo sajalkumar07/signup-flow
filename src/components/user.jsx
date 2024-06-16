@@ -7,7 +7,7 @@ const User = ({ user, onLogout }) => {
       <p>First Name: {user.firstName}</p>
       <p>Last Name: {user.lastName}</p>
       <p>Email: {user.email}</p>
-      <button onClick={onLogout}>Logout</button>
+      <button onClick={onLogout} type="submit" className='btn'>Logut</button>
     </div>
   );
 };
